@@ -26,7 +26,8 @@ export const siteConfig = {
       ]
     },
     { title: "Услуги", href: "/services" },
-    { title: "Доставка", href: "/oplata-i-dostavka" },
+    { title: "Оплата и доставка", href: "/oplata-i-dostavka" },
+    { title: "О производстве", href: "/o-proizvodstve" },
     { title: "Контакты", href: "/contacts" }
   ],
   
