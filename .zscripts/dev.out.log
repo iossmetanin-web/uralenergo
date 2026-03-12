@@ -207,3 +207,5 @@ All exports of the module are statically known (It doesn't have dynamic exports)
  GET / 500 in 1006ms (compile: 891ms, render: 115ms)
 ⚠ Cross origin request detected from preview-chat-e59063bc-5e38-4f7c-94d6-977a2e9a0f04.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+✓ Compiled in 217ms
+ GET / 200 in 632ms (compile: 75ms, render: 557ms)
