@@ -25,7 +25,7 @@ export const catalogCategories = [
     id: "ktp",
     name: "Подстанции КТП 2КТП КТПН",
     href: "#catalog",
-    image: "/images/ktp.jpg",
+    image: "/images/ktp.png",
     description: "Комплектные трансформаторные подстанции для промышленных и жилых объектов",
     specs: [
       { label: "Мощность", value: "25-2500", unit: "кВА" },
