@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ArrowRight, Shield } from "lucide-react";
+import { Download, Shield } from "lucide-react";
 import { VideoBackground } from "@/components/ui-custom/VideoBackground";
 
 const heroVideos = [
@@ -94,9 +94,13 @@ export function HeroSection() {
 
           {/* CTA */}
           <div className="hero-cta flex flex-wrap gap-4">
-            <a href="#contacts" className="btn-brutal btn-brutal-accent">
-              Отправить запрос
-              <ArrowRight className="w-4 h-4 ml-2 inline" />
+            <a 
+              href="/oprosnyj_list_uralenergo.xlsx" 
+              download 
+              className="btn-brutal btn-brutal-accent"
+            >
+              <Download className="w-4 h-4 mr-2 inline" />
+              Скачать опросный лист
             </a>
           </div>
         </div>
