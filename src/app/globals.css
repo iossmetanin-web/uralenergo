@@ -1,0 +1,226 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Fonts */
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-inter-tight: "Inter Tight", system-ui, sans-serif;
+  --font-jetbrains: "JetBrains Mono", ui-monospace, monospace;
+  
+  /* Colors */
+  --ue-bg: #F5F3EE;
+  --ue-text: #111111;
+  --ue-grid: #D6D3D1;
+  --ue-accent: #E63B2E;
+  --ue-yellow: #FFD100;
+  
+  /* Shadcn */
+  --background: #F5F3EE;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #111111;
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
+  --primary: #E63B2E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D6D3D1;
+  --secondary-foreground: #111111;
+  --muted: #E8E6E1;
+  --muted-foreground: #666666;
+  --accent: #FFD100;
+  --accent-foreground: #111111;
+  --destructive: #E63B2E;
+  --destructive-foreground: #FFFFFF;
+  --border: #D6D3D1;
+  --input: #D6D3D1;
+  --ring: #E63B2E;
+  --radius: 0;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    border-color: var(--ue-grid);
+  }
+  
+  body {
+    background-color: var(--ue-bg);
+    color: var(--ue-text);
+    font-family: var(--font-inter);
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter-tight);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  code, pre, .font-mono {
+    font-family: var(--font-jetbrains);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ue-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ue-grid);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ue-text);
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(var(--ue-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ue-grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Panel */
+.panel {
+  background: #FFFFFF;
+  border: 1px solid var(--ue-grid);
+  position: relative;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.panel:hover {
+  border-color: var(--ue-text);
+  box-shadow: 4px 4px 0 var(--ue-text);
+}
+
+/* Status dot */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--ue-grid);
+}
+
+.status-dot.active {
+  background: #22C55E;
+  box-shadow: 0 0 8px #22C55E;
+}
+
+.status-dot.warning {
+  background: var(--ue-yellow);
+  box-shadow: 0 0 8px var(--ue-yellow);
+}
+
+.status-dot.error {
+  background: var(--ue-accent);
+  box-shadow: 0 0 8px var(--ue-accent);
+}
+
+/* Coordinate label */
+.coord-label {
+  font-family: var(--font-jetbrains);
+  font-size: 10px;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Data value */
+.data-value {
+  font-family: var(--font-jetbrains);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ue-text);
+}
+
+/* Brutal button */
+.btn-brutal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ue-text);
+  color: var(--ue-bg);
+  padding: 12px 24px;
+  font-family: var(--font-inter-tight);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--ue-text);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-brutal:hover {
+  background: var(--ue-accent);
+  border-color: var(--ue-accent);
+  color: white;
+}
+
+.btn-brutal-accent {
+  background: var(--ue-accent);
+  border-color: var(--ue-accent);
+}
+
+.btn-brutal-accent:hover {
+  background: #B82820;
+  border-color: #B82820;
+}
+
+.btn-brutal-outline {
+  background: transparent;
+  color: var(--ue-text);
+}
+
+.btn-brutal-outline:hover {
+  background: var(--ue-text);
+  color: var(--ue-bg);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--ue-grid);
+  border: none;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-bottom-2 {
+  animation-name: slideInFromBottom;
+}
