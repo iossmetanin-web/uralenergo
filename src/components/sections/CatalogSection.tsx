@@ -66,17 +66,14 @@ export function CatalogSection() {
             >
               <div className="panel overflow-hidden">
                 {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden bg-white">
                   <Image
                     src={category.image}
                     alt={category.name}
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="object-contain group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-[#111111]/50 group-hover:bg-[#111111]/30 transition-colors" />
 
                   {/* Hover indicator */}
                   <div className="absolute inset-0 bg-[#E63B2E]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
